@@ -613,6 +613,26 @@ class ModbusSimulatorContext:
     # Internal action methods
     # --------------------------------------------
 
+
+    @classmethod
+    def action_register(cls, registers, inx, cell):
+        """Update with register number.
+
+        :meta private:
+        """
+        if cell.type == CELL_TYPE_BIT:
+            registers[inx].value = inx
+        elif cell.type == CELL_TYPE_FLOAT32:
+            regs = cls.build_registers_from_value(float(inx), False)
+            registers[inx].value = regs[0]
+            registers[inx + 1].value = regs[1]
+        elif cell.type == CELL_TYPE_UINT16:
+            registers[inx].value = inx
+        elif cell.type == CELL_TYPE_UINT32:
+            regs = cls.build_registers_from_value(inx, True)
+            registers[inx].value = regs[0]
+            registers[inx + 1].value = regs[1]
+
     @classmethod
     def action_random(cls, registers, inx, cell, _kwargs):
         """Update with random value.
