@@ -1,5 +1,4 @@
 """Client"""
-from pymodbus.client.base import ModbusBaseClient
 from pymodbus.client.serial import AsyncModbusSerialClient, ModbusSerialClient
 from pymodbus.client.tcp import AsyncModbusTcpClient, ModbusTcpClient
 from pymodbus.client.tls import AsyncModbusTlsClient, ModbusTlsClient
@@ -14,7 +13,6 @@ __all__ = [
     "AsyncModbusTcpClient",
     "AsyncModbusTlsClient",
     "AsyncModbusUdpClient",
-    "ModbusBaseClient",
     "ModbusSerialClient",
     "ModbusTcpClient",
     "ModbusTlsClient",
