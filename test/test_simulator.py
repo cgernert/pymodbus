@@ -5,6 +5,8 @@ import logging
 
 import pytest
 
+import pytest
+
 from examples.client_async import setup_async_client
 from examples.helper import Commandline
 from examples.server_simulator import run_server_simulator, setup_simulator

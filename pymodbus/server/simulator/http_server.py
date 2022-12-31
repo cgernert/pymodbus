@@ -464,6 +464,7 @@ class ModbusSimulatorServer:
                 "FUNCTION_RESPONSE_CLEAR_AFTER", str(self.call_response.clear_after)
             )
         )
+<<<<<<< HEAD
 
         call_rows = ""
         if not call_foot:
@@ -475,6 +476,16 @@ class ModbusSimulatorServer:
         )
         return html
 
+=======
+
+        # <!--FC_ROWS-->
+        # <!--FC_FOOT-->
+        #
+
+        new_html = html.replace("<!--FC_FOOT-->", call_foot)
+        return new_html
+
+>>>>>>> 6e37de0 (Updated datastore Simulator.)
     async def build_html_server(self, _params, html):
         """Build html server page."""
         return html
@@ -535,11 +546,14 @@ class ModbusSimulatorServer:
             else "NO registers added."
         )
 
+<<<<<<< HEAD
     def helper_list_response(self, response):
         """List response"""
         # JAN
         return response
 
+=======
+>>>>>>> 6e37de0 (Updated datastore Simulator.)
     def server_response_manipulator(self, response):
         """Manipulate responses.
 
@@ -549,6 +563,7 @@ class ModbusSimulatorServer:
         - response, either original or modified
         - skip_encoding, signals whether or not to encode the response
         """
+<<<<<<< HEAD
         if self.call_response.delay:
             txt = f"Delaying response by {self.call_response.delay}s for all incoming requests"
             _logger.warning(txt)
@@ -587,10 +602,59 @@ class ModbusSimulatorServer:
         return self.helper_list_response(response), False
 
     def server_request_tracer(self, _request, *_addr):
+=======
+        return response, False
+
+        # ---------------------
+        # ORIGINAL
+        # skip_encoding = False
+        # if not self._manipulator_config:
+        #     return response
+        #
+        # clear_after = self._manipulator_config.get("clear_after")
+        # if clear_after and self._counter > clear_after:
+        #     txt = f"Resetting manipulator after {clear_after} responses"
+        #     logger.info(txt)
+        #     self.update_manipulator_config(dict(DEFAULT_MANIPULATOR))
+        #     return response
+        # response_type = self._manipulator_config.get("response_type")
+        # if response_type == "error":
+        #     error_code = self._manipulator_config.get("error_code")
+        #     logger.warning("Sending error response for all incoming requests")
+        #     err_response = ExceptionResponse(response.function_code, error_code)
+        #     err_response.transaction_id = response.transaction_id
+        #     err_response.unit_id = response.unit_id
+        #     response = err_response
+        #     self._counter += 1
+        # elif response_type == "delayed":
+        #     delay_by = self._manipulator_config.get("delay_by")
+        #     txt = f"Delaying response by {delay_by}s for all incoming requests"
+        #     logger.warning(txt)
+        #     time.sleep(delay_by)  # change to async
+        #     self._counter += 1
+        # elif response_type == "empty":
+        #     logger.warning("Sending empty response")
+        #     self._counter += 1
+        #     response.should_respond = False
+        # elif response_type == "stray":
+        #     if (data_len := self._manipulator_config.get("data_len", 10)) <= 0:
+        #         txt = f"Invalid data_len {data_len}, using default 10"
+        #         logger.warning(txt)
+        #         data_len = 10
+        #     response = os.urandom(data_len)
+        #     self._counter += 1
+        #     skip_encoding = True
+        # return response, skip_encoding
+
+    def server_request_tracer(self, request, *addr):
+>>>>>>> 6e37de0 (Updated datastore Simulator.)
         """Trace requests.
 
         All server requests passes this filter before being handled.
         """
+<<<<<<< HEAD
         if self.call_monitor.active:
             # build list box
             pass
+=======
+>>>>>>> 6e37de0 (Updated datastore Simulator.)

@@ -120,6 +120,7 @@ async def main():
     task = ModbusSimulatorServer(**cmd_args)
 
     await task.run_forever()
+    _logger.debug("STOP")
 
 
 if __name__ == "__main__":
