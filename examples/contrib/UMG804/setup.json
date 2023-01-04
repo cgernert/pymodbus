@@ -1,0 +1,281 @@
+{
+    "server_list": {
+        "umg804": {
+            "comm": "tcp",
+            "host": "0.0.0.0",
+            "port": 5020,
+            "allow_reuse_address": true,
+            "allow_reuse_port": true,
+            "ignore_missing_slaves": false,
+            "framer": "socket",
+            "identity": {
+                "VendorName": "pymodbus",
+                "ProductCode": "SIM-UMG804",
+                "VendorUrl": "https://github.com/riptideio/pymodbus/",
+                "ProductName": "pymodbus Simulator",
+                "ModelName": "Simulator UMG804",
+                "MajorMinorRevision": "3.0.2"
+            }
+        },
+        "vertiv": {
+            "comm": "tcp",
+            "host": "0.0.0.0",
+            "port": 5021,
+            "allow_reuse_address": true,
+            "allow_reuse_port": true,
+            "ignore_missing_slaves": false,
+            "framer": "socket",
+            "identity": {
+                "VendorName": "pymodbus",
+                "ProductCode": "SIM-UMG804",
+                "VendorUrl": "https://github.com/riptideio/pymodbus/",
+                "ProductName": "pymodbus Simulator",
+                "ModelName": "Simulator UMG804",
+                "MajorMinorRevision": "3.0.2"
+            }
+        }
+    },
+    "device_list": {
+        "umg804": {
+            "setup": {
+                "co size": 63000,
+                "di size": 63000,
+                "hr size": 63000,
+                "ir size": 63000,
+                "shared blocks": true,
+                "type exception": false,
+                "defaults": {
+                    "value": {
+                        "bits": 0,
+                        "uint16": 1,
+                        "uint32": 1,
+                        "float32": 1.0,
+                        "string": " "
+                    },
+                    "action": {
+                        "bits": null,
+                        "uint16": "increment",
+                        "uint32": "increment",
+                        "float32": "increment",
+                        "string": null
+                    }
+                }
+            },
+            "invalid": [
+                [78, 99],
+                [157, 189],
+                [194, 199],
+                [983, 999],
+                [1022, 1099],
+                [1104, 1197],
+                1499,
+                [1604, 1699],
+                [1716, 1799],
+                [2614, 4799],
+                [4817, 4899],
+                [4933, 4999]
+                    ],
+            "write": [
+                5,
+                [61, 76],
+                [100, 101],
+                [109, 117],
+                [120, 136],
+                140,
+                [147, 152],
+                156,
+                [190,193],
+                [200, 982],
+                [1000, 1004],
+                [1007, 1021],
+                [1100, 1103],
+                [1198, 1199],
+                [1206, 1306],
+                [1307, 1402],
+                [1800, 1929]
+            ],
+            "bits": [
+                9,
+                77,
+                [116, 119],
+                136,
+                {"addr": 144, "value": 1},
+                149,
+                152,
+                [1198, 1199],
+                [1200, 1201],
+                [1206, 1207],
+                {"addr": [1208, 1306], "action": "random"},
+                {"addr": [1307, 1402], "action": "random"},
+                [1500, 1507],
+                [1508, 1603]
+            ],
+            "uint16": [
+                {"addr": 3, "value": 123, "action": null},
+                {"addr": 4, "value": 101, "action": null},
+                {"addr": 5, "value": 999, "action": null},
+                {"addr": 6, "value": 11, "action": null},
+                {"addr": 10, "value": 0, "action": null},
+                {"addr": 11, "value": 1, "action": null},
+                {"addr": 12, "value": 4, "action": null},
+                {"addr": 13, "value": 0, "action": null},
+                {"addr": [22, 25], "value": 56789, "action": null},
+                {"addr": [26, 28], "value": 117, "action": null},
+                {"addr": [100, 101], "action": null},
+                {"addr": 102, "action": "timestamp"},
+                {"addr": [103, 108], "action": null},
+                {"addr": 109, "action": "timestamp"},
+                {"addr": [110, 115], "action": null},
+                [124,125],
+                {"addr": 137, "action": null},
+                {"addr": [142, 143], "action": null},
+                {"addr": [145, 148], "action": null},
+                {"addr": [150, 151], "value": 1017, "action": null},
+                {"addr": 153, "value": 31415, "action": null},
+                {"addr": 156, "action": null},
+                {"addr": [190, 191], "value": 2048, "action": null},
+                {"addr": 192, "action": "reset"},
+                {"addr": 193, "action": null},
+                {"addr": [200, 295], "action": null},
+                {"addr": [296, 391], "action": null},
+                {"addr": [392, 487], "action": null},
+                {"addr": [488, 583], "action": null},
+                {"addr": [584, 679], "action": null},
+                {"addr": [680, 775], "action": null},
+                {"addr": [776, 871], "action": null},
+                {"addr": [872, 967], "action": null},
+                {"addr": [968, 982], "action": null},
+                {"addr": [1000, 1006], "action": null},
+                {"addr": [1007, 1021], "action": null},
+                {"addr": [1100, 1103], "action": null},
+                [1202, 1205],
+                [1403, 1498],
+                {"addr": 1700, "action": "increment"},
+                {"addr": 1701, "action": "increment"},
+                {"addr": 1702, "action": "timestamp"},
+                {"addr": [1703, 1709], "action": null},
+                {"addr": 1710, "value": 220, "action": null},
+                {"addr": 1711, "value": 3, "action": null},
+                {"addr": [1800, 1801], "action": null},
+                {"addr": [1930, 1949], "action": null},
+                {"addr": [1966, 1989], "action": null},
+                {"addr": 4800, "value": 1, "action": null},
+                {"addr": 4801, "value": 50, "action": null},
+                {"addr": [4802, 4809], "value": 110, "action": null},
+                {"addr": [4810, 4813], "value": 97, "action": null},
+                {"addr": [4814, 4816], "value": 90, "action": null},
+                {"addr": [5000, 5095], "value": 10, "action": null},
+                {"addr": [5096, 5191], "value": 20, "action": null},
+                {"addr": [5192, 5287], "value": 10, "action": null}
+            ],
+            "uint32": [
+                {"addr": [1, 2], "value": 123456789, "action": null},
+                {"addr": [7, 8], "action": "uptime"},
+                {"addr": [14, 21], "value": 123456789, "action": null},
+                {"addr": [120, 123], "value": 0, "action": "increment"},
+                {"addr": [126, 135], "value": 1234, "action": null},
+                {"addr": [138, 141], "value": 1, "action": null},
+                {"addr": [1802, 1929], "action": null},
+                {"addr": [1950, 1965], "action": null},
+                {"addr": [1990, 2109], "action": null},
+                {"addr": [5288, 5479], "value": 115, "action": "increment"},
+                {"addr": [5480, 5671], "value": 55, "action": "increment"},
+                {"addr": [5672, 5863], "value": 45, "action": "increment"},
+                {"addr": [5864, 5959], "value": 2065, "action": "increment"},
+                {"addr": [5960, 6055], "value": 33, "action": "increment"},
+                {"addr": [6056, 6151], "value": 23, "action": "increment"}
+            ],
+            "float32": [
+                {"addr": [154, 155], "value": 3.141592, "action": null},
+                {"addr": [1712, 1713], "value": 220.3, "action": null},
+                {"addr": [1714, 1715], "value": 3.5, "action": null},
+                {"addr": [4900, 4901], "value": 50.1, "action": null},
+                {"addr": [4902, 4917], "value": 110, "action": null},
+                {"addr": [4918, 4825], "value": 97, "action": null},
+                {"addr": [4926, 4932], "value": 90, "action": null},
+                {"addr": [10000, 10191], "value": 115.0, "action": "increment"},
+                {"addr": [10192, 10383], "value": 55.0, "action": "increment"},
+                {"addr": [10384, 10575], "value": 45.0, "action": "increment"},
+                {"addr": [10576, 10767], "value": 2065.0, "action": "increment"},
+                {"addr": [10768, 10959], "value": 33.0, "action": "increment"},
+                {"addr": [10960, 11151], "value": 23.0, "action": "increment"}
+            ],
+            "string": [
+                {"addr": [29, 44], "value": "Brand name, 32 bytes...........X"},
+                {"addr": [45, 60], "value": "Model name, 32 bytes...........X"},
+                {"addr": [61, 76], "value": "Device name, 32 bytes..........X"}
+            ],
+            "repeat": [
+                {"addr": [1942, 2109], "to": [2110, 2613]}
+            ]
+        },
+        "vertiv": {
+            "setup": {
+                "co size": 50000,
+                "di size": 50000,
+                "hr size": 50000,
+                "ir size": 50000,
+                "shared blocks": true,
+                "type exception": false,
+                "defaults": {
+                    "value": {
+                        "bits": 0,
+                        "uint16": 0,
+                        "uint32": 0,
+                        "float32": 0.0,
+                        "string": " "
+                    },
+                    "action": {
+                        "bits": null,
+                        "uint16": "increment",
+                        "uint32": "increment",
+                        "float32": "increment",
+                        "string": null
+                    }
+                }
+            },
+            "invalid": [
+                [0,10064],
+                [10072, 10132],
+                [11215, 15506],
+                [15512, 30462],
+                [30491, 30586],
+                [30596, 30598],
+                [35900, 39997],
+                [40000, 40477],
+                [40480, 45899],
+                [45901, 49997]
+            ],
+            "write": [
+                [40478, 40479],
+                45900,
+                [49998, 49999]
+            ],
+            "bits": [
+            ],
+            "uint16": [
+                [10065, 10071],
+                [10133, 11214],
+                [15507, 15511],
+                [30463, 30490],
+                [30587, 30591],
+                [30594, 30595],
+                35899,
+                45900
+            ],
+            "uint32": [
+                [30592, 30593],
+                [39998, 39999],
+                [40478, 40479],
+                [49998, 49999]
+            ],
+            "float32": [
+            ],
+            "string": [
+            ],
+            "repeat": [
+                {"addr": [30587, 30598], "to": [30599, 31594]}
+            ]
+        }
+    }
+}
