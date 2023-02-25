@@ -11,12 +11,7 @@
 - Code for JSON Calls
 - Code for JSON server
 
-- Columns for all
-- Hide element in radio button
-
 - Document simulator general
-- Document datastore-simulator dict
-- Document simulator server dict
 - Document JSON.
 
 - Update datastore simulator example
