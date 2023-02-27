@@ -376,7 +376,7 @@ class ModbusSimulatorServer:
         call_rows = ""
         for entry in reversed(self.call_list):
             # req_obj = self.request_lookup[entry[1]]
-            call_rows += f"<tr>{entry.call}</td><td>{entry.fc}</td><td>{entry.address}</td><td>{entry.count}</td><td>{entry.data}</td></tr>"
+            call_rows += f"<tr><td>{entry.call} - {entry.fc}</td><td>{entry.address}</td><td>{entry.count}</td><td>{entry.data}</td></tr>"
             # line += req_obj.funcion_code_name
         new_html = (
             html.replace("<!--SIMULATION_ACTIVE-->", simulation_action)

@@ -2,7 +2,11 @@
 - Add action_random do not change with every read (--randomize from repl)
 - Add change_rate to getValues (--change_rate from repl)
 
+- Code for register setValue (Uint32....)
 - Code for calls
+- Code for call tracer
+- Code for response tracer
+- Code for response simulator
 - Code for logs
 - Code for server
 
@@ -16,4 +20,4 @@
 
 - Update datastore simulator example
 
-- Add test of server simulator
+- Add test of server simulator (100% coverage)
