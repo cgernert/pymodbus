@@ -43,6 +43,17 @@ RESPONSE_JUNK = 3
 
 
 @dataclasses.dataclass()
+class CallTracer:
+    """Define call/response traces"""
+
+    call: bool = False
+    fc: int = -1
+    address: int = -1
+    count: int = -1
+    data: bytes = b""
+
+
+@dataclasses.dataclass()
 class CallTypeMonitor:
     """Define Request/Response monitor"""
 
@@ -358,14 +369,15 @@ class ModbusSimulatorServer:
             )
             function_codes += f"<option value={function.function_code} {selected}>{function.function_code_name}</option>"
         simulation_action = "ACTIVE" if self.call_response.active >= 0 else ""
+
+        max_len = MAX_FILTER if self.call_monitor.active else 0
+        while len(self.call_list) > max_len:
+            del self.call_list[0]
         call_rows = ""
         for entry in reversed(self.call_list):
-            line = "<tr><td>"
-            if entry[0] == "R":
-                line += "Response "
-            line += (self.request_lookup[entry[1]].funcion_code_name,)
-            line += f"</td><td>{entry[2]}</td><td>{entry[3]}</td><td>{entry[4]}</td>"
-            call_rows += line
+            # req_obj = self.request_lookup[entry[1]]
+            call_rows += f"<tr>{entry.call}</td><td>{entry.fc}</td><td>{entry.address}</td><td>{entry.count}</td><td>{entry.data}</td></tr>"
+            # line += req_obj.funcion_code_name
         new_html = (
             html.replace("<!--SIMULATION_ACTIVE-->", simulation_action)
             .replace("FUNCTION_RANGE_START", range_start_html)
@@ -570,8 +582,6 @@ class ModbusSimulatorServer:
         """
         return response, False
         if self.call_monitor.active:  # pylint: disable=unreachable
-            while len(self.call_list) > MAX_FILTER:
-                del self.call_list[0]
             self.call_list.append(
                 (
                     "R",
@@ -624,14 +634,11 @@ class ModbusSimulatorServer:
 
         All server requests passes this filter before being handled.
         """
-        while len(self.call_list) > MAX_FILTER:
-            del self.call_list[0]
-        self.call_list.append(
-            (
-                "C",
-                request.function_code,
-                request.address if hasattr(request, "address") else "-",
-                request.count if hasattr(request, "count") else "-",
-                "-",
-            )
+        tracer = CallTracer(
+            call=True,
+            fc=request.function_code,
+            address=request.address if hasattr(request, "address") else -1,
+            count=request.count if hasattr(request, "count") else -1,
+            data="-",
         )
+        self.call_list.append(tracer)
